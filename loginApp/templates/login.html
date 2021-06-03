@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="reg">
+            <h1>Please Register Below</h1>
+            {% if messages %}
+                {% for message in messages%}
+                    <p style="color: red;">{{message}}</p>
+                {% endfor %}
+
+            {% endif %}
+            <form action="/register" method="post">
+                {% csrf_token %}
+                <p>First Name <input type="text" name="fname" id=""></p> <br>
+                <p>Last Name <input type="text" name="lname" id=""></p> <br>
+                <p>Email <input type="text" name="email" id=""></p> <br>
+                <p>Password <input type="password" name="pword" id=""></p> <br>
+                <p>Confirm PW <input type="password" name="pword2" id=""></p> <br>
+                <p>Birthday <input type="date" name="bday" id=""></p> <br>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+        <div class="login">
+            <h1>Login</h1>
+
+            <form action="/login" method="post">
+                {% csrf_token %}
+                <p>Email <input type="text" name="emaillogin" id=""></p> <br>
+                <p>Password <input type="password" name="pwlogin" id=""></p> <br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

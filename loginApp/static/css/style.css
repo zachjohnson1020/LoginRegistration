@@ -1,0 +1,21 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: top;
+    margin: auto;
+    /* border: solid 2px gray; */
+    width: 800px;
+}
+
+form input{
+    margin:auto;
+}
+
+h1{
+    margin-bottom: 20px;
+}
